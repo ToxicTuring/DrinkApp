@@ -15,19 +15,22 @@
 
 <script>
 	import GoBackButton from '$lib/components/GoBackButton.svelte';
+	import GoBackHome from '$lib/components/GoBackHome.svelte';
 	import PopularDrinks from '$lib/components/PopularDrinks.svelte';
+	import Search from '$lib/components/Search.svelte';
+	import { fly } from 'svelte/transition';
 
 	export let drinks;
-	console.log(drinks);
 </script>
 
-<section>
+<section in:fly={{ y: 50, duration: 500, delay: 500 }} out:fly={{ duration: 500 }}>
+	<Search />
 	{#if drinks}
 		<PopularDrinks {drinks} />
 	{:else}
-		<div class="content-center">
-			<h1 class="my-20 text-5xl text-center ">No drink found</h1>
-			<GoBackButton />
+		<div class="flex flex-wrap grid justify-evenly gap-5 mt-5">
+			<p>No drink found</p>
+			<GoBackHome />
 		</div>
 	{/if}
 </section>

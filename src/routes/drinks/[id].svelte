@@ -15,6 +15,7 @@
 
 <script>
 	import GoBackButton from '$lib/components/GoBackButton.svelte';
+	import { fly } from 'svelte/transition';
 
 	export let drinkDetail;
 	let ingredients = [];
@@ -35,7 +36,11 @@
 	}
 </script>
 
-<section class="flex flex-wrap justify-evenly gap-5 mt-5">
+<section
+	class="flex flex-wrap justify-evenly gap-5 mt-5"
+	in:fly={{ y: 50, duration: 500 }}
+	out:fly={{ duration: 500 }}
+>
 	<div
 		class="max-w-xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mx-8"
 	>

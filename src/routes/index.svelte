@@ -14,10 +14,11 @@
 <script>
 	import PopularDrinks from '$lib/components/PopularDrinks.svelte';
 	import Search from '$lib/components/Search.svelte';
+	import { fly } from 'svelte/transition';
 	export let drinks;
 </script>
 
-<section>
+<section in:fly={{ y: 50, duration: 500, delay: 500 }} out:fly={{ duration: 500 }}>
 	<Search />
 	<PopularDrinks {drinks} />
 </section>

@@ -2,7 +2,13 @@
 	import '../app.css';
 </script>
 
-<div class="container mx-auto">
+<div class="container mx-auto mt-3">
+	<a href="/">
+		<h1 class="text-7xl font-['Lobster']">
+			<i class="fa-solid fa-martini-glass-citrus" />
+			frontend drink
+		</h1>
+	</a>
 	<slot />
 </div>
 
